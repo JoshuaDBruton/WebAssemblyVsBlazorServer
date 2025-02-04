@@ -1,0 +1,25 @@
+﻿@page "/web-assembly"
+@rendermode InteractiveWebAssembly
+
+<PageTitle>Web Assembly</PageTitle>
+
+<InputSelect Value="@Selected">
+    @foreach (var opt in Items) {
+        <option value="@opt">@opt</option>
+    }
+</InputSelect>
+
+@code {
+    private List<string> Items;
+    private string Selected;
+
+    protected override void OnInitialized()
+    {
+        for (int i = 0; i < 1000; i++)
+        {
+            Items.Add($"Item{i}");
+        }
+
+        base.OnInitialized();
+    }
+}
