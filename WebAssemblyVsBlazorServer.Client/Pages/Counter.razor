@@ -3,7 +3,7 @@
 
 <PageTitle>Web Assembly</PageTitle>
 
-<InputSelect Value="@Selected">
+<InputSelect @bind-Value="@Selected">
     @foreach (var opt in Items) {
         <option value="@opt">@opt</option>
     }
